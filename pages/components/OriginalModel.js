@@ -116,8 +116,5 @@ function OriginalModel() {
     </section>
   );
 }
-{
-  /* <Image fill src={prediction.output} alt="output" /> */
-}
 
 export default OriginalModel;

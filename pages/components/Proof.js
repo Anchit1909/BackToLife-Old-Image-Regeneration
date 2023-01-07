@@ -11,7 +11,7 @@ function Proof() {
         <h2 className="mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
           Why{" "}
           <span className="text-blue-600 dark:text-blue-500">BackToLife</span>{" "}
-          is the best choice
+          is the best choice?
         </h2>
         <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
           Watch the results from some of our previous renders and be amazed by
