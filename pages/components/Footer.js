@@ -88,7 +88,6 @@ function Footer() {
           Star us on GitHub
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
-        
       </div>
     </footer>
   );

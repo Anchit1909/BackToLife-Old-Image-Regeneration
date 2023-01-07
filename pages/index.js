@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <div className="">
       <Head>
+        <link rel="icon" sizes="180x180" href="/logo.png"></link>
         <title>BackToLife</title>
       </Head>
       <Navigation />
