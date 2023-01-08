@@ -51,6 +51,12 @@ function HowItWorks() {
             <p>
               (II.)Then, we learn the mapping that restores the corrupted images
               to clean ones in the latent space with partial non-local block.
+              <span className="text-blue-600 dark:text-blue-500">
+                <a href="https://arxiv.org/pdf/2009.07047v1.pdf">
+                  {" "}
+                  Paper(Journal Version)
+                </a>
+              </span>
             </p>
           </div>
         </div>
