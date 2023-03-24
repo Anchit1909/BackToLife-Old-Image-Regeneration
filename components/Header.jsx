@@ -50,7 +50,7 @@ function Header() {
         {/* <MagnifyingGlassIcon className="h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100" /> */}
         <div className="flex items-center justify-center cursor-pointer opacity-75 transition hover:opacity-100 space-x-1">
           <Image src="/Twitter.svg" height={22} width={22}></Image>
-          <Image src="/LinkedIn.svg" height={22} width={22}></Image>
+          <Image src="/Linkedin.svg" height={22} width={22}></Image>
           <Image src="/Github.svg" height={22} width={22}></Image>
         </div>
         {/* <Link href="/checkout">
