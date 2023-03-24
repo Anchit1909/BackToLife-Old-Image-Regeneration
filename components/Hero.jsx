@@ -48,7 +48,7 @@ function Hero() {
         <div className="relative flex items-center justify-center my-auto mx-auto lg:mx-0 lg:w-1/2 md:pl-6">
           <div className="absolute right-10 top-10 w-96 h-96 bg-[#8034BB]/30 rounded-full blur-3xl" />
           <Image
-            src="/hero_section_image.png"
+            src="/Hero_section_image.png"
             alt=""
             width={420}
             height={420}
