@@ -5,6 +5,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 function OriginalModel() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
+  const [oldImage, setOldImage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ function OriginalModel() {
       return;
     }
     setPrediction(prediction);
+    setOldImage(e.target.prompt.value);
 
     while (
       prediction.status !== "succeeded" &&
@@ -40,7 +42,7 @@ function OriginalModel() {
     }
   };
   return (
-    <section className="bg-white dark:bg-gray-900 flex flex-col gap-4 pt-5">
+    <section className="flex flex-col gap-4 pt-5 mt-4">
       <form className="mx-[28rem]" onSubmit={handleSubmit}>
         <label
           for="default-search"
@@ -52,7 +54,7 @@ function OriginalModel() {
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
-              className="w-5 h-5 text-gray-500 dark:text-gray-400"
+              className="w-5 h-5 text-gray-700"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -70,46 +72,51 @@ function OriginalModel() {
             type="text"
             id="default-search"
             name="prompt"
-            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block font-poppins font-semibold w-full p-3 pl-10 text-base text-[#767575] border border-gray-900 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter URL of image"
             required
           />
           <button
             type="submit"
-            className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white font-poppins absolute right-2.5 bottom-2.5 bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
           >
             Submit
           </button>
         </div>
       </form>
 
-      {/* <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="prompt"
-          placeholder="Enter a prompt to display an image"
-        />
-        <button type="submit">Go!</button>
-      </form> */}
-
       {error && <div>{error}</div>}
-      <div className="mt-5 mb-10 flex flex-col items-center">
+      <div className="mt-8 mb-10 flex flex-col items-center">
         {prediction && (
-          <div>
-            {prediction.output && (
-              <div className="">
-                <Image
-                  src={prediction.output}
-                  width="424"
-                  height="221"
-                  alt="output"
-                />
+          <div className="flex items-center flex-col">
+            <div className="flex flex-row gap-x-6">
+              <div className="flex flex-col items-center space-y-4">
+                <p className="font-poppins font-medium text-lg">
+                  Original Photo
+                </p>
+                <Image src={oldImage} width={240} height={240} alt="input" />
               </div>
-            )}
-            <p className="text-white text-lg mt-3 font-medium">
-              <span className="text-blue-600 dark:text-blue-500">Status: </span>
+
+              {prediction.output && (
+                <div className="flex flex-col items-center space-y-4">
+                  <p className="font-poppins font-medium text-lg">
+                    Restored Photo
+                  </p>
+                  <Image
+                    src={prediction.output}
+                    width={240}
+                    height={240}
+                    alt="output"
+                  />
+                </div>
+              )}
+            </div>
+            <div className="text-black text-lg mt-4 font-medium font-poppins">
+              <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent font-semibold">
+                Status:{" "}
+              </span>
               {prediction.status}
-            </p>
+            </div>
           </div>
         )}
       </div>

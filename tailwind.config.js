@@ -24,6 +24,8 @@ module.exports = {
       },
     },
     fontFamily: {
+      poppins: ["var(--font-poppins)"],
+      clash: ["var(--font-clash)"],
       body: [
         "Inter",
         "ui-sans-serif",
