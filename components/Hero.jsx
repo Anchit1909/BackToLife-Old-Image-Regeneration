@@ -1,13 +1,11 @@
 import Image from "next/image";
 import React from "react";
-// import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 function Hero() {
   return (
     <section className="mt-24 pb-10" id="home">
       <div className="relative flex md:justify-between mx-auto px-12 flex-col-reverse md:flex-row mb-0 max-w-screen-xl">
         {/* Left */}
-        {/* <div className="absolute right-72 -top-20 lg:-left-72 lg:-top-16 w-96 h-96 bg-[#AE37EF]/10 rounded-full blur-3xl" /> */}
         <div className="relative flex flex-col space-y-5 lg:w-1/2 justify-center">
           <a
             href="https://twitter.com/nutlope/status/1615597965787435015"
@@ -55,11 +53,6 @@ function Hero() {
             className="z-10"
           />
         </div>
-        {/* <div className="relative items-center justify-center my-auto mx-auto w-1/2 pl-32 hidden md:flex"></div> */}
-        {/* ----Image for Below md size --- */}
-        {/* <div className=" relative flex items-center justify-center my-auto mx-auto w-1/2 md:hidden "> */}
-        {/* <div className="absolute -right-32 top-32 w-96 h-96 bg-[#E38445]/30 rounded-full blur-3xl" /> */}
-        {/* </div> */}
       </div>
     </section>
   );
