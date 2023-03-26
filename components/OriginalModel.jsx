@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Toggle from "./Toggle";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 function OriginalModel() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
   const [oldImage, setOldImage] = useState("");
+  const [restoredLoaded, setRestoredLoaded] = useState(true);
+  const [sideBySide, setSideBySide] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -75,13 +82,22 @@ function OriginalModel() {
       {error && <div>{error}</div>}
       <div className="mt-8 mb-10 flex flex-col items-center">
         {prediction && (
+          <Toggle
+            className={`${restoredLoaded ? "visible mb-6" : "invisible"}`}
+            sideBySide={sideBySide}
+            setSideBySide={(newVal) => setSideBySide(newVal)}
+          />
+        )}
+        {prediction && (
           <div className="flex items-center flex-col">
-            <div className="flex flex-row gap-x-6">
+            <div
+              className={`${!sideBySide ? "flex flex-row gap-x-6" : "hidden"}`}
+            >
               <div className="flex flex-col items-center space-y-4">
                 <p className="font-poppins font-medium text-lg">
                   Original Photo
                 </p>
-                <Image src={oldImage} width={240} height={240} alt="input" />
+                <Image src={oldImage} width={280} height={280} alt="input" />
               </div>
 
               {prediction.output && (
@@ -91,13 +107,34 @@ function OriginalModel() {
                   </p>
                   <Image
                     src={prediction.output}
-                    width={240}
-                    height={240}
+                    width={280}
+                    height={280}
                     alt="output"
                   />
                 </div>
               )}
             </div>
+            {/* Second */}
+            <div
+              className={`${sideBySide ? "flex flex-row gap-x-6" : "hidden"}`}
+            >
+              {prediction.output && (
+                <div className="flex flex-col items-center space-y-4 w-96">
+                  <ReactCompareSlider
+                    itemOne={
+                      <ReactCompareSliderImage src={oldImage} alt="Image one" />
+                    }
+                    itemTwo={
+                      <ReactCompareSliderImage
+                        src={prediction.output}
+                        alt="Image two"
+                      />
+                    }
+                  />
+                </div>
+              )}
+            </div>
+            {/* Second-end */}
             <div className="text-black text-lg mt-4 font-medium font-poppins">
               <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent font-semibold">
                 Status:{" "}
