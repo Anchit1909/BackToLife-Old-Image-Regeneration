@@ -50,7 +50,7 @@ function OriginalModel() {
     }
   };
   return (
-    <section className="flex flex-col gap-4 pt-5 mt-4">
+    <section className="flex flex-col gap-4 pt-5 mt-4" id="originalmodel">
       <form className="mx-[28rem]" onSubmit={handleSubmit}>
         <label
           htmlFor="default-search"

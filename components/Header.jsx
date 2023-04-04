@@ -17,14 +17,14 @@ function Header() {
       <div className="hidden flex-1 items-center justify-center space-x-8 md:flex font-poppins font-medium">
         <Link
           className="cursor-pointer opacity-75 transition hover:opacity-100"
-          href="/#products"
+          href="/#home"
           scroll={false}
         >
           Home
         </Link>
         <Link
           className="cursor-pointer opacity-75 transition hover:opacity-100"
-          href="/#explore"
+          href="/#originalmodel"
           scroll={false}
         >
           Restore Photos
@@ -32,9 +32,15 @@ function Header() {
       </div>
       <div className="flex items-center justify-center gap-x-4 md:w-1/5">
         <div className="flex items-center justify-center cursor-pointer opacity-75 transition hover:opacity-100 space-x-1">
-          <Image src="/Twitter.svg" height={22} width={22} />
-          <Image src="/Linkedin.svg" height={22} width={22} />
-          <Image src="/Github.svg" height={22} width={22} />
+          <a href="https://twitter.com/anchit1909" target="_blank">
+            <Image src="/Twitter.svg" height={22} width={22} />
+          </a>
+          <a href="https://www.linkedin.com/in/anchit-sinha/" target="_blank">
+            <Image src="/Linkedin.svg" height={22} width={22} />
+          </a>
+          <a href="https://github.com/Anchit1909" target="_blank">
+            <Image src="/Github.svg" height={22} width={22} />
+          </a>
         </div>
       </div>
     </header>

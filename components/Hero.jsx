@@ -29,7 +29,7 @@ function Hero() {
           {/* Button Container */}
           <div className="flex items-center justify-center w-full space-x-4 lg:justify-start">
             <a
-              href="#"
+              href="/#originalmodel"
               className="px-3 py-2 text-sm font-semibold font-poppins text-white bg-black rounded-md shadow-md hover:bg-[#e7965f]"
             >
               Restore your photos
