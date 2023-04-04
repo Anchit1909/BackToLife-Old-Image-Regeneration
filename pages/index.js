@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <link rel="icon" sizes="180x180" href="/logo.png"></link>
+        <link rel="icon" sizes="180x180" href="/FinalLogo.svg"></link>
         <title>BackToLife</title>
       </Head>
       <main className="bg-gradient-to-br from-[#8034BB]/[5%] to-[#ED14CA]/[5%]">
