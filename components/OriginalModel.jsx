@@ -51,7 +51,7 @@ function OriginalModel() {
   };
   return (
     <section className="flex flex-col gap-4 pt-5 mt-4" id="originalmodel">
-      <form className="mx-[28rem]" onSubmit={handleSubmit}>
+      {/* <form className="mx-[28rem]" onSubmit={handleSubmit}>
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -77,6 +77,47 @@ function OriginalModel() {
             Submit
           </button>
         </div>
+      </form> */}
+      <form onSubmit={handleSubmit} className="mx-auto font-poppins">
+        <label
+          for="search"
+          className="mb-2 text-sm font-medium text-gray-900 sr-only"
+        >
+          Search
+        </label>
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="default-search"
+            name="prompt"
+            className="block w-[324px] sm:w-[512px] p-4 pl-10 text-sm text-[#767575] border border-gray-900 rounded-lg bg-gray-50 font-semibold focus:ring-blue-500 focus:border-blue-500 "
+            placeholder="Enter URL of image"
+            required
+          />
+          <button
+            type="submit"
+            className="text-white absolute right-2.5 bottom-2.5 bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+          >
+            Submit
+          </button>
+        </div>
       </form>
 
       {error && <div>{error}</div>}
@@ -91,7 +132,9 @@ function OriginalModel() {
         {prediction && (
           <div className="flex items-center flex-col">
             <div
-              className={`${!sideBySide ? "flex flex-row gap-x-6" : "hidden"}`}
+              className={`${
+                !sideBySide ? "flex flex-col sm:flex-row gap-x-6" : "hidden"
+              }`}
             >
               <div className="flex flex-col items-center space-y-4">
                 <p className="font-poppins font-medium text-lg">

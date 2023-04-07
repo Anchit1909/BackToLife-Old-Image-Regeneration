@@ -4,9 +4,9 @@ import React from "react";
 function Hero() {
   return (
     <section className="mt-24 pb-10" id="home">
-      <div className="relative flex md:justify-between mx-auto px-12 flex-col-reverse md:flex-row mb-0 max-w-screen-xl">
+      <div className="relative flex md:justify-between mx-auto px-12 flex-col-reverse items-center justify-center md:flex-row mb-0 max-w-screen-xl">
         {/* Left */}
-        <div className="relative flex flex-col space-y-5 lg:w-1/2 justify-center">
+        <div className="relative flex flex-col space-y-5 lg:w-1/2 justify-center mt-12 md:mt-0 text-center lg:text-left">
           <a
             href="https://twitter.com/nutlope/status/1615597965787435015"
             target="_blank"
