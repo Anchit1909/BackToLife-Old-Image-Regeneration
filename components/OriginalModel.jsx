@@ -162,7 +162,7 @@ function OriginalModel() {
               className={`${sideBySide ? "flex flex-row gap-x-6" : "hidden"}`}
             >
               {prediction.output && (
-                <div className="flex flex-col items-center space-y-4 w-96">
+                <div className="flex flex-col items-center space-y-4 w-80 sm:w-96">
                   <ReactCompareSlider
                     itemOne={
                       <ReactCompareSliderImage src={oldImage} alt="Image one" />
