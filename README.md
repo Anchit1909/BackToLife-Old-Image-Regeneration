@@ -18,8 +18,9 @@
 
 <p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
+  <a href="#howitworks"><strong>How It Works</strong></a> ·
+  <a href="#techstack"><strong>Tech Stack</strong></a> ·
+  <a href="#runninglocally"><strong>Running Locally</strong></a> ·
   <a href="#author"><strong>Author</strong></a>
 </p>
 <br/>
