@@ -1,8 +1,7 @@
 <a href="https://back-to-life-old-image-regeneration.vercel.app/">
   <img alt="BackToLife – Regenerate old images" src="/public/screenshot.png">
-  <a href="https://back-to-life-old-image-regeneration.vercel.app/">
-    <h1 align="center">BackToLife</h1>
-  </a>
+    <h1 align="center"><a href="https://back-to-life-old-image-regeneration.vercel.app/">BackToLife</a></h1>
+  
 </a>
 
 <p align="center">
